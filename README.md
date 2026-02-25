@@ -87,4 +87,4 @@ Or just `:colorscheme cyberpunk`.
 
 ## License
 
-MIT
+0BSD
