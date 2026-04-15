@@ -1,11 +1,11 @@
 --- Cyberpunk colorscheme for Neovim.
 ---
 --- Usage with lazy.nvim:
----   { "taigrr/cyberpunk.vim", opts = {} }
+---   { "taigrr/cyberpunk.nvim", opts = {} }
 ---
 --- Or with custom options:
 ---   {
----     "taigrr/cyberpunk.vim",
+---     "taigrr/cyberpunk.nvim",
 ---     opts = {
 ---       transparent = true,
 ---       italic_comments = true,
@@ -45,6 +45,24 @@ function M.setup(opts)
   local palette = require("cyberpunk.palette")
   local highlights = require("cyberpunk.highlights")
   highlights.apply(palette, opts)
+
+  -- Terminal colors
+  vim.g.terminal_color_0 = palette.black
+  vim.g.terminal_color_1 = palette.red
+  vim.g.terminal_color_2 = palette.green
+  vim.g.terminal_color_3 = palette.yellow
+  vim.g.terminal_color_4 = palette.blue
+  vim.g.terminal_color_5 = palette.dark_purple
+  vim.g.terminal_color_6 = palette.cyan
+  vim.g.terminal_color_7 = palette.special
+  vim.g.terminal_color_8 = palette.dark_fg
+  vim.g.terminal_color_9 = palette.red
+  vim.g.terminal_color_10 = palette.green
+  vim.g.terminal_color_11 = palette.yellow
+  vim.g.terminal_color_12 = palette.blue
+  vim.g.terminal_color_13 = palette.dark_purple
+  vim.g.terminal_color_14 = palette.cyan
+  vim.g.terminal_color_15 = palette.special
 end
 
 return M

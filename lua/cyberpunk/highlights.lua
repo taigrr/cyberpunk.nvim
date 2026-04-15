@@ -174,10 +174,131 @@ function M.apply(palette, opts)
   hl(0, "@lsp.type.variable", { link = "@variable" })
   hl(0, "@lsp.mod.deprecated", { strikethrough = true })
 
+  -- Floating windows
+  hl(0, "NormalFloat", { fg = palette.green, bg = opts.transparent and palette.none or palette.dark_bg })
+  hl(0, "FloatBorder", { fg = palette.cyan, bg = opts.transparent and palette.none or palette.dark_bg })
+  hl(0, "FloatTitle", { fg = palette.yellow, bold = true })
+  hl(0, "FloatFooter", { fg = palette.dark_fg })
+
+  -- Messages
+  hl(0, "ErrorMsg", { fg = palette.red, bold = true })
+  hl(0, "WarningMsg", { fg = palette.yellow, bold = true })
+  hl(0, "ModeMsg", { fg = palette.green, bold = true })
+  hl(0, "MoreMsg", { fg = palette.cyan })
+  hl(0, "Question", { fg = palette.cyan })
+
+  -- Cursor
+  hl(0, "Cursor", { fg = palette.black, bg = palette.green })
+  hl(0, "lCursor", { fg = palette.black, bg = palette.green })
+  hl(0, "CursorIM", { fg = palette.black, bg = palette.green })
+  hl(0, "TermCursor", { fg = palette.black, bg = palette.green })
+  hl(0, "TermCursorNC", { fg = palette.black, bg = palette.dark_fg })
+
+  -- WinBar (Neovim 0.8+)
+  hl(0, "WinBar", { fg = palette.green, bold = true })
+  hl(0, "WinBarNC", { fg = palette.dark_fg })
+
+  -- Neovim 0.10+ Treesitter capture renames
+  hl(0, "@variable.member", { fg = palette.blue })
+  hl(0, "@variable.parameter", { fg = palette.blue, italic = true })
+  hl(0, "@function.method", { fg = palette.green })
+  hl(0, "@function.method.call", { fg = palette.green })
+  hl(0, "@module", { fg = palette.cyan })
+  hl(0, "@string.regexp", { fg = palette.cyan })
+  hl(0, "@markup.heading", { fg = palette.yellow, bold = true })
+  hl(0, "@markup.strong", { bold = true })
+  hl(0, "@markup.italic", { italic = true })
+  hl(0, "@markup.strikethrough", { strikethrough = true })
+  hl(0, "@markup.underline", { underline = true })
+  hl(0, "@markup.link", { fg = palette.blue, underline = true })
+  hl(0, "@markup.link.label", { fg = palette.blue })
+  hl(0, "@markup.link.url", { fg = palette.blue, underline = true })
+  hl(0, "@markup.raw", { fg = palette.cyan })
+  hl(0, "@markup.list", { fg = palette.special })
+
   -- Git signs (gitsigns.nvim)
   hl(0, "GitSignsAdd", { fg = palette.green })
   hl(0, "GitSignsChange", { fg = palette.blue })
   hl(0, "GitSignsDelete", { fg = palette.red })
+
+  -- Telescope
+  hl(0, "TelescopeNormal", { fg = palette.green, bg = opts.transparent and palette.none or palette.dark_bg })
+  hl(0, "TelescopeBorder", { fg = palette.cyan, bg = opts.transparent and palette.none or palette.dark_bg })
+  hl(0, "TelescopeTitle", { fg = palette.yellow, bold = true })
+  hl(0, "TelescopePromptNormal", { fg = palette.green, bg = opts.transparent and palette.none or palette.dark_bg })
+  hl(0, "TelescopePromptBorder", { fg = palette.cyan, bg = opts.transparent and palette.none or palette.dark_bg })
+  hl(0, "TelescopePromptTitle", { fg = palette.yellow, bold = true })
+  hl(0, "TelescopePromptPrefix", { fg = palette.red })
+  hl(0, "TelescopePreviewTitle", { fg = palette.yellow, bold = true })
+  hl(0, "TelescopeResultsTitle", { fg = palette.yellow, bold = true })
+  hl(0, "TelescopeSelection", { fg = palette.cyan, bg = palette.visual })
+  hl(0, "TelescopeSelectionCaret", { fg = palette.red })
+  hl(0, "TelescopeMatching", { fg = palette.yellow, bold = true })
+
+  -- nvim-cmp
+  hl(0, "CmpItemAbbrMatch", { fg = palette.yellow, bold = true })
+  hl(0, "CmpItemAbbrMatchFuzzy", { fg = palette.yellow })
+  hl(0, "CmpItemKindFunction", { fg = palette.green })
+  hl(0, "CmpItemKindMethod", { fg = palette.green })
+  hl(0, "CmpItemKindVariable", { fg = palette.blue })
+  hl(0, "CmpItemKindField", { fg = palette.blue })
+  hl(0, "CmpItemKindProperty", { fg = palette.blue })
+  hl(0, "CmpItemKindKeyword", { fg = palette.yellow })
+  hl(0, "CmpItemKindClass", { fg = palette.yellow })
+  hl(0, "CmpItemKindStruct", { fg = palette.yellow })
+  hl(0, "CmpItemKindInterface", { fg = palette.cyan })
+  hl(0, "CmpItemKindModule", { fg = palette.cyan })
+  hl(0, "CmpItemKindConstant", { fg = palette.blue })
+  hl(0, "CmpItemKindEnum", { fg = palette.yellow })
+  hl(0, "CmpItemKindEnumMember", { fg = palette.blue })
+  hl(0, "CmpItemKindSnippet", { fg = palette.special })
+  hl(0, "CmpItemKindText", { fg = palette.green })
+  hl(0, "CmpItemKindValue", { fg = palette.blue })
+  hl(0, "CmpItemMenu", { fg = palette.dark_fg })
+
+  -- nvim-tree
+  hl(0, "NvimTreeNormal", { fg = palette.green, bg = opts.transparent and palette.none or palette.dark_bg })
+  hl(0, "NvimTreeFolderName", { fg = palette.cyan })
+  hl(0, "NvimTreeOpenedFolderName", { fg = palette.cyan, bold = true })
+  hl(0, "NvimTreeEmptyFolderName", { fg = palette.dark_fg })
+  hl(0, "NvimTreeFolderIcon", { fg = palette.cyan })
+  hl(0, "NvimTreeRootFolder", { fg = palette.yellow, bold = true })
+  hl(0, "NvimTreeGitDirty", { fg = palette.yellow })
+  hl(0, "NvimTreeGitNew", { fg = palette.green })
+  hl(0, "NvimTreeGitDeleted", { fg = palette.red })
+  hl(0, "NvimTreeSpecialFile", { fg = palette.special })
+  hl(0, "NvimTreeIndentMarker", { fg = palette.dark_fg })
+
+  -- lazy.nvim
+  hl(0, "LazyButton", { fg = palette.green, bg = palette.dark_bg })
+  hl(0, "LazyButtonActive", { fg = palette.black, bg = palette.green })
+  hl(0, "LazyH1", { fg = palette.black, bg = palette.green, bold = true })
+  hl(0, "LazyH2", { fg = palette.yellow, bold = true })
+  hl(0, "LazySpecial", { fg = palette.cyan })
+  hl(0, "LazyCommit", { fg = palette.dark_fg })
+  hl(0, "LazyCommitType", { fg = palette.yellow })
+
+  -- indent-blankline
+  hl(0, "IblIndent", { fg = palette.dark_bg })
+  hl(0, "IblScope", { fg = palette.dark_fg })
+
+  -- which-key
+  hl(0, "WhichKey", { fg = palette.cyan })
+  hl(0, "WhichKeyGroup", { fg = palette.yellow })
+  hl(0, "WhichKeyDesc", { fg = palette.green })
+  hl(0, "WhichKeySeparator", { fg = palette.dark_fg })
+  hl(0, "WhichKeyFloat", { bg = palette.dark_bg })
+
+  -- nvim-notify
+  hl(0, "NotifyERRORBorder", { fg = palette.red })
+  hl(0, "NotifyERRORTitle", { fg = palette.red })
+  hl(0, "NotifyERRORIcon", { fg = palette.red })
+  hl(0, "NotifyWARNBorder", { fg = palette.yellow })
+  hl(0, "NotifyWARNTitle", { fg = palette.yellow })
+  hl(0, "NotifyWARNIcon", { fg = palette.yellow })
+  hl(0, "NotifyINFOBorder", { fg = palette.blue })
+  hl(0, "NotifyINFOTitle", { fg = palette.blue })
+  hl(0, "NotifyINFOIcon", { fg = palette.blue })
 
   -- Apply user overrides
   if opts.overrides then

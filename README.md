@@ -78,12 +78,32 @@ Or just `:colorscheme cyberpunk`.
 
 ## Features
 
-- 140+ highlight groups
-- Full Treesitter support (`@keyword`, `@function`, `@string`, `@variable`, etc.)
+- 200+ highlight groups
+- Full Treesitter support (legacy and Neovim 0.10+ capture names)
 - LSP semantic token highlights
 - LSP diagnostics with undercurl
-- gitsigns.nvim integration
+- Terminal colors
 - Configurable via `setup()`: transparency, italics, bold, per-group overrides
+
+### Plugin Support
+
+- **gitsigns.nvim** — git diff signs in the gutter
+- **telescope.nvim** — fuzzy finder UI
+- **nvim-cmp** — completion menu with kind highlighting
+- **nvim-tree.lua** — file explorer
+- **lualine.nvim** — statusline (use `theme = "cyberpunk"`)
+- **lazy.nvim** — plugin manager UI
+- **indent-blankline.nvim** — indent guides
+- **which-key.nvim** — keybinding popup
+- **nvim-notify** — notification popups
+
+### Lualine
+
+```lua
+require("lualine").setup({
+  options = { theme = "cyberpunk" },
+})
+```
 
 ## License
 
