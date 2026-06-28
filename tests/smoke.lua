@@ -18,6 +18,9 @@ assert(vim.g.terminal_color_1 == "#FF0000", "expected terminal colors to be set"
 assert(vim.fn.hlexists("TelescopeNormal") == 1, "expected Telescope highlights")
 assert(vim.fn.hlexists("NotifyINFOIcon") == 1, "expected notify highlights")
 assert(vim.fn.hlexists("WinBar") == 1, "expected WinBar highlight")
+assert(vim.fn.hlexists("QuickFixLine") == 1, "expected quickfix highlight")
+assert(vim.fn.hlexists("PmenuKind") == 1, "expected popup menu kind highlight")
+assert(vim.fn.hlexists("DiagnosticVirtualTextOk") == 1, "expected diagnostic virtual text highlight")
 
 local lualine_theme = require("lualine.themes.cyberpunk")
 assert(type(lualine_theme) == "table", "expected lualine theme table")
