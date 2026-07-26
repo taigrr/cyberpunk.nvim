@@ -3,6 +3,7 @@
 A dark Neovim colorscheme with neon green, cyan, yellow, and red highlights on a black background.
 
 ![Neovim](https://img.shields.io/badge/Neovim-0.8%2B-green?logo=neovim)
+[![CI](https://github.com/taigrr/cyberpunk.nvim/actions/workflows/ci.yml/badge.svg)](https://github.com/taigrr/cyberpunk.nvim/actions/workflows/ci.yml)
 
 ## Palette
 
