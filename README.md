@@ -96,6 +96,7 @@ Or just `:colorscheme cyberpunk`.
 - **indent-blankline.nvim** — indent guides
 - **which-key.nvim** — keybinding popup
 - **nvim-notify** — notification popups
+- **noice.nvim** — command line, messages, and popup UI
 
 ### Lualine
 
