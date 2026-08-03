@@ -29,11 +29,10 @@ M.defaults = {
   overrides = {},
 }
 
---- Configure and load the cyberpunk colorscheme.
----@param opts? CyberpunkOpts
-function M.setup(opts)
-  opts = vim.tbl_deep_extend("force", M.defaults, opts or {})
+M.options = vim.deepcopy(M.defaults)
 
+--- Load the cyberpunk colorscheme with the current options.
+function M.load()
   if vim.g.colors_name then
     vim.cmd("hi clear")
   end
@@ -44,7 +43,7 @@ function M.setup(opts)
 
   local palette = require("cyberpunk.palette")
   local highlights = require("cyberpunk.highlights")
-  highlights.apply(palette, opts)
+  highlights.apply(palette, M.options)
 
   -- Terminal colors
   vim.g.terminal_color_0 = palette.black
@@ -63,6 +62,13 @@ function M.setup(opts)
   vim.g.terminal_color_13 = palette.dark_purple
   vim.g.terminal_color_14 = palette.cyan
   vim.g.terminal_color_15 = palette.special
+end
+
+--- Configure and load the cyberpunk colorscheme.
+---@param opts? CyberpunkOpts
+function M.setup(opts)
+  M.options = vim.tbl_deep_extend("force", M.defaults, opts or {})
+  M.load()
 end
 
 return M

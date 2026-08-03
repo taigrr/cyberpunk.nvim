@@ -15,6 +15,10 @@ vim.cmd.colorscheme("cyberpunk")
 
 assert(vim.g.colors_name == "cyberpunk", "expected colorscheme to be active")
 assert(vim.g.terminal_color_1 == "#FF0000", "expected terminal colors to be set")
+
+local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
+assert(normal.bg == 0x101010, "expected colorscheme reload to preserve configured overrides")
+
 assert(vim.fn.hlexists("TelescopeNormal") == 1, "expected Telescope highlights")
 assert(vim.fn.hlexists("NotifyINFOIcon") == 1, "expected notify highlights")
 assert(vim.fn.hlexists("WinBar") == 1, "expected WinBar highlight")
