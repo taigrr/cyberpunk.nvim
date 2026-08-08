@@ -42,4 +42,4 @@ jobs:
           version: stable
 
       - name: Run headless smoke test
-        run: nvim --headless -u NONE '+lua dofile("tests/smoke.lua")' '+qa'
+        run: nvim --headless -u NONE -l tests/smoke.lua
