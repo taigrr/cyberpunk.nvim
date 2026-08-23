@@ -25,6 +25,8 @@ assert(vim.fn.hlexists("WinBar") == 1, "expected WinBar highlight")
 assert(vim.fn.hlexists("QuickFixLine") == 1, "expected quickfix highlight")
 assert(vim.fn.hlexists("PmenuKind") == 1, "expected popup menu kind highlight")
 assert(vim.fn.hlexists("DiagnosticVirtualTextOk") == 1, "expected diagnostic virtual text highlight")
+assert(vim.fn.hlexists("IblScope") == 1, "expected modern indent-blankline highlights")
+assert(vim.fn.hlexists("IndentBlanklineContextChar") == 1, "expected legacy indent-blankline highlights")
 assert(vim.fn.hlexists("NoiceCmdlinePopup") == 1, "expected noice highlights")
 
 local lualine_theme = require("lualine.themes.cyberpunk")
