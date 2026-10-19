@@ -94,7 +94,7 @@ Or just `:colorscheme cyberpunk`.
 - **nvim-tree.lua** — file explorer
 - **lualine.nvim** — statusline (use `theme = "cyberpunk"`)
 - **lazy.nvim** — plugin manager UI
-- **indent-blankline.nvim** — indent guides
+- **indent-blankline.nvim** — indent guides (v2 and v3)
 - **which-key.nvim** — keybinding popup
 - **nvim-notify** — notification popups
 - **noice.nvim** — command line, messages, and popup UI
