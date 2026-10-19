@@ -23,6 +23,10 @@ return {
     a = { fg = palette.black, bg = palette.blue, gui = "bold" },
     b = { fg = palette.blue, bg = palette.dark_bg },
   },
+  terminal = {
+    a = { fg = palette.black, bg = palette.special, gui = "bold" },
+    b = { fg = palette.special, bg = palette.dark_bg },
+  },
   inactive = {
     a = { fg = palette.dark_fg, bg = palette.dark_bg },
     b = { fg = palette.dark_fg, bg = palette.dark_bg },
