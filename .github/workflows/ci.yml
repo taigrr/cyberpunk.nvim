@@ -41,5 +41,8 @@ jobs:
           neovim: true
           version: stable
 
-      - name: Run headless smoke test
-        run: nvim --headless -u NONE -l tests/smoke.lua
+      - name: Run headless smoke tests
+        run: |
+          for test in tests/*.lua; do
+            nvim --headless -u NONE -l "$test"
+          done
