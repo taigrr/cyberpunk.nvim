@@ -67,7 +67,7 @@ end
 --- Configure and load the cyberpunk colorscheme.
 ---@param opts? CyberpunkOpts
 function M.setup(opts)
-  M.options = vim.tbl_deep_extend("force", M.defaults, opts or {})
+  M.options = vim.tbl_deep_extend("force", vim.deepcopy(M.defaults), vim.deepcopy(opts or {}))
   M.load()
 end
 
