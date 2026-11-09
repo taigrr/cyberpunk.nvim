@@ -311,6 +311,11 @@ function M.apply(palette, opts)
   -- indent-blankline
   hl(0, "IblIndent", { fg = palette.dark_bg })
   hl(0, "IblScope", { fg = palette.dark_fg })
+  hl(0, "IndentBlanklineChar", { fg = palette.dark_bg })
+  hl(0, "IndentBlanklineContextChar", { fg = palette.dark_fg })
+  hl(0, "IndentBlanklineContextStart", { sp = palette.dark_fg, underline = true })
+  hl(0, "IndentBlanklineSpaceChar", { fg = palette.dark_bg })
+  hl(0, "IndentBlanklineSpaceCharBlankline", { fg = palette.dark_bg })
 
   -- which-key
   hl(0, "WhichKey", { fg = palette.cyan })
