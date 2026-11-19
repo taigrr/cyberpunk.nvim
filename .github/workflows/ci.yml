@@ -31,6 +31,10 @@ jobs:
 
   smoke-test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        neovim: [v0.8.3, stable]
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -39,10 +43,12 @@ jobs:
         uses: rhysd/action-setup-vim@v1
         with:
           neovim: true
-          version: stable
+          version: ${{ matrix.neovim }}
 
       - name: Run headless smoke tests
         run: |
           for test in tests/*.lua; do
-            nvim --headless -u NONE -l "$test"
+            CYBERPUNK_TEST="$test" nvim --headless -u NONE \
+              -c 'lua local ok, err = pcall(dofile, vim.env.CYBERPUNK_TEST); if not ok then print(err); vim.cmd("cquit 1") end' \
+              -c 'qa!'
           done
